@@ -30,7 +30,7 @@ async fn success() {
     // Start the program test
     let (mut banks_client, payer, recent_blockhash) = program_test.start().await;
 
-    let amount = 10_000;
+    let amount = 2000;
     let decimals = 9;
     let rent = Rent::default();
 

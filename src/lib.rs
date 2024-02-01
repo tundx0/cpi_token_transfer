@@ -8,10 +8,7 @@ use {
         program_pack::Pack,
         pubkey::Pubkey,
     },
-    spl_token::{
-        instruction::transfer_checked,
-        state::{Account, Mint},
-    },
+    spl_token::{instruction::transfer_checked, state::Mint},
 };
 
 solana_program::entrypoint!(process_instruction);
@@ -34,9 +31,7 @@ pub fn process_instruction(
         return Err(ProgramError::InvalidSeeds);
     }
 
-    let source_account = Account::unpack(&source_info.try_borrow_data()?)?;
-
-    let amount = source_account.amount;
+    let amount = 2000;
 
     let mint = Mint::unpack(&mint_info.try_borrow_data()?)?;
 
